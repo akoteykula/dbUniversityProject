@@ -16,26 +16,31 @@ SELECT * FROM likes WHERE user_id = 1;
 SELECT * FROM channel_subscribers WHERE channel_id = 1;
 
 -- Select all videos with their channel names
-SELECT videos.name AS video_name, channels.name AS channel_name
-FROM videos INNER JOIN channels ON videos.channel_id = channels.id;
+SELECT videos.name AS video_name,
+       channels.name AS channel_name
+FROM videos
+INNER JOIN channels ON videos.channel_id = channels.id;
 
 -- Select all comments with their user names and video names
 SELECT comments.id AS comment_id,
-users.first_name AS user_name, videos.name AS video_name
+       users.first_name AS user_name,
+       videos.name AS video_name
 FROM comments
 INNER JOIN users ON comments.user_id = users.id
 INNER JOIN videos ON comments.video_id = videos.id;
 
 -- Select all likes with their user names and channel names
 SELECT likes.id AS like_id,
-users.first_name AS user_name, channels.name AS channel_name
+       users.first_name AS user_name,
+       channels.name AS channel_name
 FROM likes
 INNER JOIN users ON likes.user_id = users.id
 INNER JOIN channels ON likes.channel_id = channels.id;
 
 -- Select all channel subscribers with their user names and channel names
 SELECT channel_subscribers.id AS subscriber_id,
-users.first_name AS user_name, channels.name AS channel_name
+       users.first_name AS user_name,
+       channels.name AS channel_name
 FROM channel_subscribers
 INNER JOIN users ON channel_subscribers.user_id = users.id
 INNER JOIN channels ON channel_subscribers.channel_id = channels.id;
