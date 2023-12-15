@@ -1,7 +1,7 @@
 CREATE TABLE users (
   id INTEGER PRIMARY KEY,
   first_name VARCHAR(64),
-  last_name VARCHAR(64),
+  last_name VARCHAR(64) NULL,
   email VARCHAR(128) UNIQUE,
   created_at TIMESTAMP
 );
@@ -18,8 +18,8 @@ CREATE TABLE channels (
 CREATE TABLE videos (
   id INTEGER PRIMARY KEY,
   name VARCHAR(128),
-  description VARCHAR NULL,
-  shortLink VARCHAR UNIQUE,
+  description VARCHAR(1024) NULL,
+  shortLink VARCHAR(32) UNIQUE,
   channel_id INTEGER,
   CONSTRAINT relation_videos_fk FOREIGN KEY (channel_id) REFERENCES channels (id)
 );
