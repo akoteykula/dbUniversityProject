@@ -1,9 +1,21 @@
 -- Inserting data into users table
 INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (1, 'Amal', 'Khamidov', 'khamidovamal@gmail.com', CURRENT_TIMESTAMP);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (2, 'Donald', 'Trump', 'trump@gmail.com', CURRENT_TIMESTAMP);
+INSERT INTO users (id, first_name, last_name, email, created_at) VALUES (3, 'Taylor', 'Swift', 'swift@gmail.com', CURRENT_TIMESTAMP);
+
 INSERT INTO channels (id, name, shortName, language, creator_id) VALUES (1, 'Mister Beast', 'beast', 'EN', 1);
-INSERT INTO videos (id, name, description, shortLink, channel_id) VALUES (1, 'Video 1', 'This is video 1', 'v1', 1);
+INSERT INTO channels (id, name, shortName, language, creator_id) VALUES (2, 'Fox News', 'fxnews', 'EN', 1);
+INSERT INTO channels (id, name, shortName, language, creator_id) VALUES (3, 'Music', 'ytmusic', 'EN', 1);
+
+INSERT INTO videos (id, name, description, shortLink, channel_id) VALUES (1, 'I created the biggest donut in the World', 'Subscribe to my channel', 'v1', 1);
+INSERT INTO videos (id, name, description, shortLink, channel_id) VALUES (2, 'Who become President?', 'News', 'v1', 2);
+INSERT INTO videos (id, name, description, shortLink, channel_id) VALUES (3, 'PSY Gangnam Style', 'PSY', 'psgnst', 3);
+
 INSERT INTO comments (id, user_id, video_id, t_content, reply_comment_id, created_at) VALUES (1, 1, 1, 'Cool Vid', NULL, CURRENT_TIMESTAMP);
+
 INSERT INTO likes (id, user_id, channel_id, created_at) VALUES (1, 1, 1, CURRENT_TIMESTAMP);
+INSERT INTO likes (id, user_id, channel_id, created_at) VALUES (2, 2, 2, CURRENT_TIMESTAMP);
+INSERT INTO likes (id, user_id, channel_id, created_at) VALUES (3, 3, 3, CURRENT_TIMESTAMP);
 INSERT INTO channel_subscribers (id, user_id, channel_id, created_at) VALUES (1, 1, 1, CURRENT_TIMESTAMP);
 
 -- Base SELECT queries
